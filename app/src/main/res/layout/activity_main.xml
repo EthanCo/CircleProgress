@@ -27,6 +27,7 @@
         custom:bgColor="@color/color_bg"
         custom:currProgress="160"
         custom:foreStartColor="@color/color1"
+        custom:isSolid="true"
         custom:maxProgress="360"
         custom:progressInitialPosition="-90"
         custom:progressWidth="12dp"

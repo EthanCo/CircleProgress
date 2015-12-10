@@ -47,6 +47,8 @@ public class CircleProgress extends View {
     protected boolean useGradient;
     //边角是否是圆的
     private boolean isCircleCorner;
+    //是否是实心的
+    protected boolean isSolid;
 
 
     public CircleProgress(Context context) {
@@ -75,6 +77,7 @@ public class CircleProgress extends View {
         useAnimation = ta.getBoolean(R.styleable.CircleProgress_useAnimation, true);
         useGradient = ta.getBoolean(R.styleable.CircleProgress_useGradient, true);
         isCircleCorner = ta.getBoolean(R.styleable.CircleProgress_isCircleCorner, true);
+        isSolid = ta.getBoolean(R.styleable.CircleProgress_isSolid, false);
         ta.recycle();
 
         //检查值是否合理
@@ -109,23 +112,25 @@ public class CircleProgress extends View {
 
     protected void initForePaint() {
         forePaint = new Paint();
-        setCommonPaint(forePaint, isCircleCorner);
+        setCommonPaint(forePaint, isSolid, isCircleCorner);
     }
 
     protected void initBgPaint() {
         bgPaint = new Paint();
         bgPaint.setColor(bgPaintColor);
-        setCommonPaint(bgPaint, isCircleCorner);
+        setCommonPaint(bgPaint, isSolid, isCircleCorner);
     }
 
     /**
      * @param paint
      * @param isRound 边角是否是圆的
      */
-    protected void setCommonPaint(Paint paint, boolean isRound) {
+    protected void setCommonPaint(Paint paint, boolean isSolid, boolean isRound) {
         paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(mStrokeWidth);
+        if (!isSolid) {
+            paint.setStyle(Paint.Style.STROKE);
+        }
         if (isRound) {
             paint.setStrokeCap(Paint.Cap.ROUND);
         }
@@ -162,8 +167,8 @@ public class CircleProgress extends View {
         super.onDraw(canvas);
 
         canvas.rotate(progressInitialPosition, mCenter.x, mCenter.y);
-        canvas.drawArc(mPaintRectF, 0, maxProgress, false, bgPaint);
-        canvas.drawArc(mPaintRectF, 0, currProgress, false, forePaint);
+        canvas.drawArc(mPaintRectF, 0, maxProgress, isSolid, bgPaint);
+        canvas.drawArc(mPaintRectF, 0, currProgress, isSolid, forePaint);
     }
 
 

@@ -21,6 +21,8 @@
         <attr name="useGradient" format="boolean" />
         <!-- 边角是否是圆的-->
         <attr name="isCircleCorner" format="boolean" />
+        <!-- 是否是实心的-->
+        <attr name="isSolid" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="TickCircleProgress">

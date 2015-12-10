@@ -74,12 +74,14 @@ public class TickCircleProgress extends CircleProgress {
         tickWidth = ta.getDimension(R.styleable.TickCircleProgress_tickWidth, 2);
         tickMarkHeight = ta.getDimension(R.styleable.TickCircleProgress_tickMarkHeight, mStrokeWidth * 1F);
         ta.recycle();
+
+        isSolid = false;
     }
 
     private void initTickPaint() {
         tickPaint = new Paint();
         tickPaint.setColor(tickColor);
-        setCommonPaint(tickPaint, false);
+        setCommonPaint(tickPaint, isSolid, false);
         tickPaint.setStrokeWidth(tickWidth);
     }
 
@@ -87,7 +89,7 @@ public class TickCircleProgress extends CircleProgress {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawArc(mTickPaintRect, 0, maxProgress, false, tickPaint);
+        canvas.drawArc(mTickPaintRect, 0, maxProgress, isSolid, tickPaint);
 
         float routeDegress = maxProgress / (tickMarkCount - 1);
         for (int i = 0; i < tickMarkCount; i++) {

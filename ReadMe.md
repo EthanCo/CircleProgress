@@ -55,6 +55,7 @@
 在布局文件中
 
 	<com.ethanco.circleprogresslibrary.CircleProgress
+		xmlns:custom="http://schemas.android.com/apk/res-auto"
         android:id="@+id/myCircleProgress"
         android:layout_width="150dp"
         android:layout_height="150dp"

@@ -1,7 +1,7 @@
 ## CircleProgress ##
 圆形的进度条，具有多种形态，CircleProgress的子类TickCircleProgress还具备刻度线
 
-![CircleProgress](http://i5.tietuku.com/129231ec9683cca4.gif)
+![CircleProgress](/CircleProgress.gif)
 
 ### 可设置的属性 ###
 
@@ -37,6 +37,20 @@
         <!-- 刻度条的高度-->
         tickMarkHeight
 
+### TextCircleProgress中增加的属性 ###
+
+		<!-- 主标题颜色-->
+        headColor
+        <!-- 副标题颜色-->
+        subHeadColor
+        <!-- 主标题字体大小-->
+        headSize
+        <!-- 副标题字体大小-->
+        subHeadSize
+        <!-- 底部标题颜色-->
+        bottomHeadColor
+        <!-- 底部标题大小-->
+        bottomHeadSize
 ### 最简单的使用 ###
 在布局文件中
 

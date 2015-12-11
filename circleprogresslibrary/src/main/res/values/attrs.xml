@@ -33,4 +33,19 @@
         <!-- 刻度条的高度-->
         <attr name="tickMarkHeight" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="TextCircleProgress">
+        <!-- 主标题颜色-->
+        <attr name="headColor" format="color" />
+        <!-- 副标题颜色-->
+        <attr name="subHeadColor" format="color" />
+        <!-- 主标题字体大小-->
+        <attr name="headSize" format="dimension" />
+        <!-- 副标题字体大小-->
+        <attr name="subHeadSize" format="dimension" />
+        <!-- 底部标题颜色-->
+        <attr name="bottomHeadColor" format="color" />
+        <!-- 底部标题大小-->
+        <attr name="bottomHeadSize" format="dimension" />
+    </declare-styleable>
 </resources>

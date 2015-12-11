@@ -94,6 +94,12 @@ public class CircleProgress extends View {
     protected void initViewSize() {
         mWidth = getMeasuredWidth();
         mHeight = getMeasuredHeight();
+        //防止宽高不一致
+        if (mWidth > mHeight) {
+            mWidth = mHeight;
+        } else {
+            mHeight = mWidth;
+        }
         mCenter = new PointF(mWidth / 2, mHeight / 2);
         mPaintRectF = new RectF(0 + mStrokeWidth, 0 + mStrokeWidth, mWidth - mStrokeWidth, mHeight - mStrokeWidth);
 

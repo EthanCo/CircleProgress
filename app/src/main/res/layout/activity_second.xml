@@ -9,8 +9,8 @@
 
     <com.ethanco.circleprogresslibrary.TextCircleProgress
         android:id="@+id/myTextCircleProgress"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerInParent="true"
         custom:bottomHeadSize="14sp"
         custom:headColor="@color/color2"
